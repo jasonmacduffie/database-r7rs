@@ -80,3 +80,9 @@
       (close-input-port p)
       result)))
 
+(define (write-database db path)
+  (let ((p (open-output-file path)))
+    (write db p)
+    (newline p)
+    (close-output-port p)))
+
