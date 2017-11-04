@@ -74,3 +74,9 @@
 (define (select-table db tb)
   (assq-ref (cdr db) tb))
 
+(define (load-database path)
+  (let ((p (open-input-file path)))
+    (let ((result (read p)))
+      (close-input-port p)
+      result)))
+
