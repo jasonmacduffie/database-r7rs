@@ -4,7 +4,7 @@
   (scheme base)
   (scheme read)
   (scheme write)
-  (scheme load))
+  (macduffie database))
 
 (define database
   '(db
@@ -35,3 +35,11 @@
                    (assq-ref pet 'owner-name)))
          people
          pets)))
+
+(write (select '(name pet-name)
+               (join (lambda (owner pet)
+                       (equal? (assq-ref owner 'name)
+                               (assq-ref pet 'owner-name)))
+                     (table->alists (select-table database 'people))
+                     (table->alists (select-table database 'pets)))))
+(newline)
