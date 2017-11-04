@@ -1,3 +1,4 @@
+#!/usr/bin/env gosh
 
 (import
   (scheme base)
@@ -34,4 +35,3 @@
                    (assq-ref pet 'owner-name)))
          people
          pets)))
-

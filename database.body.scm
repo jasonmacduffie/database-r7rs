@@ -1,8 +1,4 @@
 
-(import
-  (scheme base)
-  (srfi 1))
-
 (define (assq-ref al key)
   (cdr (assq key al)))
 
