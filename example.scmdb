@@ -1,13 +1,1 @@
-(db
- (people
-  (name age)
-  (string integer)
-  ("Alice" 25)
-  ("Bob" 50)
-  ("Cathy" 15))
- (pets
-  (pet-name species owner-name)
-  ("Agatha" "bird" "Alice")
-  ("Roger" "dog" "Cathy")
-  ("Kiddo" "cat" "Alice")
-  ("Kudos" "dog" "Ricard")))
+(db (people (name age) (string integer) ("Alice" 25) ("Bob" 50) ("Cathy" 15)) (pets (pet-name species owner-name) ("Agatha" "bird" "Alice") ("Roger" "dog" "Cathy") ("Kiddo" "cat" "Alice") ("Kudos" "dog" "Ricard")))

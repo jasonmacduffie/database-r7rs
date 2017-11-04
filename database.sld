@@ -7,5 +7,5 @@
     (srfi 1))
   (export assq-ref select join table->alists insert-into!
           update-row! update-table! select-table load-database
-          write-database)
+          write-database current-database current-database-path)
   (include "./database.body.scm"))

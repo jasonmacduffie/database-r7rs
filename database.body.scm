@@ -74,15 +74,28 @@
 (define (select-table db tb)
   (assq-ref (cdr db) tb))
 
+(define active-database
+  (list 'db))
+
+(define active-database-path
+  "")
+
+(define (current-database)
+  active-database)
+
+(define (current-database-path)
+  active-database-path)
+
 (define (load-database path)
   (let ((p (open-input-file path)))
     (let ((result (read p)))
       (close-input-port p)
-      result)))
+      (set! active-database-path path)
+      (set! active-database result))))
 
-(define (write-database db path)
-  (let ((p (open-output-file path)))
-    (write db p)
+(define (write-database)
+  (let ((p (open-output-file active-database-path)))
+    (write active-database p)
     (newline p)
     (close-output-port p)))
 
